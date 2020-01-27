@@ -17,24 +17,34 @@ import { RegisterComponent } from './login/register.component';
 
 // Rutas
 
+// MOdulos
+import { PagesModule } from './pages/pages.module';
+import { SharedModule } from './shared/shared.module';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    NopagefoundComponent,
-    DashboardComponent,
-    ProgressComponent,
-    Graficas1Component,
-    HeaderComponent,
-    SidebarComponent,
-    BreadcrumbsComponent,
-    PagesComponent,
-    RegisterComponent
+    RegisterComponent,
+  //  NopagefoundComponent
+
+
+   // DashboardComponent,
+   // ProgressComponent,
+   // Graficas1Component,
+   // HeaderComponent,
+  // SidebarComponent,
+   // BreadcrumbsComponent,
+  //  PagesComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    APPT_ROUTES
+    APPT_ROUTES,
+    PagesModule,
+    SharedModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
