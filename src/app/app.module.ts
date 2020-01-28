@@ -11,6 +11,7 @@ import { APPT_ROUTES } from './app.routes';
 // MOdulos
 import { PagesModule } from './pages/pages.module';
 import { SharedModule } from './shared/shared.module';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { SharedModule } from './shared/shared.module';
     AppRoutingModule,
     APPT_ROUTES,
     PagesModule,
-    SharedModule
+    SharedModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
