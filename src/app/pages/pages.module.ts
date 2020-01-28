@@ -8,6 +8,9 @@ import { SharedModule } from '../shared/shared.module';
 // rutas hijas
 import { PAGES_ROUTES } from './pages.routes';
 
+// Forularios para usar [(ngModule)]
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
     declarations:    [
@@ -27,7 +30,8 @@ import { PAGES_ROUTES } from './pages.routes';
 
     imports:    [
         SharedModule,
-        PAGES_ROUTES
+        PAGES_ROUTES,
+        FormsModule
     ]
 })
 
