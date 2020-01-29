@@ -13,6 +13,8 @@ import { FormsModule } from '@angular/forms';
 
 import { IncrementadorComponent } from '../components/incrementador/incrementador.component';
 
+// n2g Charts
+import { ChartsModule } from 'ng2-charts';
 
 
 @NgModule({
@@ -35,7 +37,8 @@ import { IncrementadorComponent } from '../components/incrementador/incrementado
     imports:    [
         SharedModule,
         PAGES_ROUTES,
-        FormsModule
+        FormsModule,
+        ChartsModule
     ]
 })
 

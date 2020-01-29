@@ -8,8 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef} 
 })
 export class IncrementadorComponent implements OnInit {
 
-  @ViewChild('txtProgress') txtProgress: ElementRef;
-
+  @ViewChild('txtProgress', null ) txtProgress: ElementRef;
   // tslint:disable-next-line:no-input-rename
   @Input('nombre') leyenda: string = 'leyenda';
     // tslint:disable-next-line:no-inferrable-types
@@ -32,27 +31,33 @@ export class IncrementadorComponent implements OnInit {
   onChanges(newValue: number)  {
 
     // tslint:disable-next-line:prefer-const var JS para que el input no reciba valores > 100
-    // let elemHTML: any = document.getElementsByName('progreso')[0];
+    // let elemHTML = document.getElementsByName('progreso')[0];
+
+    //  let elemHTML: string = (document.getElementsByName('progreso')[0] as HTMLInputElement).value;
+  
+      // tslint:disable-next-line:prefer-const
+      let elemHTML: any = document.getElementsByName('progreso');
+   // const elemHTML: HTMLInputElement = document.getElementById('progreso') as HTMLInputElement;
+   // const varieableH: string = elemHTML.value;
+
+     // console.log( elemHTML.value);
      //   let elemHTML: any = document.getElementsByName('progreso')[0];
 
-  //  console.log( this.txtProgress );
-
-    // tslint:disable-next-line: deprecation
-    console.log(event);
-
-    if ( newValue >= 100)  {
+      if ( newValue >= 100)  {
       this.progreso = 100;
     }  else if ( newValue <= 0 ) {
       this.progreso = 0;
     }  else {
+
       this.progreso = newValue;
     }
 
     // Logica JS para que el input no reciba valores > 100
-   // elemHTML.value = Number(  this.progreso  );
-    this.txtProgress.nativeElement.value = this.progreso;
+      elemHTML.value = (  this.progreso  );
 
-    this.cambioValor.emit( this.progreso );
+      this.txtProgress.nativeElement.value = this.progreso;
+
+      this.cambioValor.emit( this.progreso );
 
   }
 
@@ -72,7 +77,7 @@ export class IncrementadorComponent implements OnInit {
     // aumentar valor de la barra
     this.progreso = this.progreso + valor;
   //  Emite el valor numerico de progreso cuando se cambia, con el Output
-    this.cambioValor.emit( this.progreso );
+   // this.cambioValor.emit( this.progreso );
 
     this.txtProgress.nativeElement.focus();
   }
@@ -80,3 +85,8 @@ export class IncrementadorComponent implements OnInit {
 
 
 }
+
+
+// bold
+
+

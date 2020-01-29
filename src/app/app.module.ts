@@ -26,7 +26,7 @@ import { FormsModule } from '@angular/forms';
     APPT_ROUTES,
     PagesModule,
     SharedModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
